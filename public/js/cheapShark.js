@@ -1,3 +1,4 @@
+$(document).ready(function() {
 // Creating a function to pull in game prices from CheapShark API
 function gamePrice() {
   var cSharkURL = "https://www.cheapshark.com/redirect?"
@@ -8,5 +9,5 @@ function gamePrice() {
   }).then(function(data) {
     console.log(data);
   });
-
-}
+  }
+})
