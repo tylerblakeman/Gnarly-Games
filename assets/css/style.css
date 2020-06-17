@@ -1,24 +1,69 @@
 .variable-width img {
-	width: auto;
-	height: 25vh;
-}
-
-body {
-	background-color: black;
-}
-
-nav {
-  background-color: black;
+  width: auto;
+  height: 25vh;
+  margin-bottom: 30px;
 }
 
 .multi-row img {
   width: 20vh;
 }
 
-.multi-row div {
-  background-color: hotpink;
+body {
+  background-color: #3d144c;
 }
 
-button {
+#loginBtn {
+  background-color: #f52789;
+  color: #faeb2c;
+  border: 1px solid #faeb2c;
+  font-weight: 700;
+}
 
+#loginBtn:hover {
+  background-color: #faeb2c;
+  color: #f52789;
+  font-weight: 700;
+}
+
+.filterBtns {
+  background-color: #3d144c;
+  color: #1685f8;
+  border: 3px solid #1685f8;
+  font-weight: 600;
+}
+
+.btn-group {
+  margin: 0px;
+  padding: opx;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap");
+
+.gnarlyGames {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #faeb2c;
+  text-shadow: 5px 6px #f52789, 12px 10px 0px #000000;
+}
+
+.btnNav {
+  border-top: 8px double #1685f8;
+}
+
+.card {
+  margin: 20px 10px 10px 10px;
+  box-shadow: 8px 12px 5px #000000;
+}
+
+.card-body {
+  background-color: #faeb2c;
+  border: solid 5px #f52789;
+  color: #1685f8;
 }
