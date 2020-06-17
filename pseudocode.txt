@@ -19,6 +19,10 @@ APIs -
 
   CheapShark:
   - Pull prices
+  * mySQL Database:
+    - Create a table called 'price'
+    - Add values of title, storeId, salePrice, dealId, storeName
+    - Querying will join title (game name) to IGDB title
 
   Twitch:
   - Pulling data:
