@@ -1,0 +1,29 @@
+Gnarly Games
+
+MVP -
+  APIs:
+  IGDB (Game video, reviews, genre, screenshots, title, ratings, feed trailer)
+  CheapShark (Pricing)
+  Twitch (Live streaming current games, most popular clip)
+
+Nice to haves -
+  API(s)
+  Google Maps (Locate game stores)
+  Board game atlas (Physical game reviews, images of game, etc..)
+
+APIs -
+  Create the AJAX calls
+  IGDB:
+  - Pulling data: 
+      Game name, Genre, Rating, Artwork, Reviews, trailer
+
+  CheapShark:
+  - Pull prices
+  * mySQL Database:
+    - Create a table called 'price'
+    - Add values of title, storeId, salePrice, dealId, storeName
+    - Querying will join title (game name) to IGDB title
+
+  Twitch:
+  - Pulling data:
+      Live streams, most popular clips
