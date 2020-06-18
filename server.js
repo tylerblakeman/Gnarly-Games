@@ -1,10 +1,6 @@
 require("dotenv").config();
 var express = require("express");
-var exphbs = require("express-handlebars");
-var session = require("express-session");
-var passport = require('passport-oauth').OAuth2Strategy;
-var request = require('request');
-var handlebars = require('handlebars');
+
 
 var db = require("./models");
 
@@ -16,14 +12,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
