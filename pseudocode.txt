@@ -27,3 +27,23 @@ APIs -
   Twitch:
   - Pulling data:
       Live streams, most popular clips
+
+IGDB:
+
+-create the variables that appear on HTML page
+    -Game title
+    -Artwork
+    - *Price from CheapShark
+    - Summary
+  
+  -Popular Games 
+      -Game title
+      -Artwork
+      -Order by Popularity (The popularity score of the game)
+      OR - total_rating (Average rating based on both IGDB user and external critic scores)
+
+
+
+  
+   
+    
