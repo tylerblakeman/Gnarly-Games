@@ -1,0 +1,24 @@
+.variable-width img {
+	width: auto;
+	height: 25vh;
+}
+
+body {
+	background-color: black;
+}
+
+nav {
+  background-color: black;
+}
+
+.multi-row img {
+  width: 20vh;
+}
+
+.multi-row div {
+  background-color: hotpink;
+}
+
+button {
+
+}
