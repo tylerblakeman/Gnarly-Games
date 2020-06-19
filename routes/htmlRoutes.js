@@ -19,9 +19,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"))
   });
 
-  // Render 404 page for any unmatched routes
+  // Redirecting to index.html if another routname is entered
   app.get("*", function(req, res) {
-    res.render("404");
+    res.sendFile(path.join(__dirname, "../public/index.html"))
   });
 };
 
