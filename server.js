@@ -17,7 +17,7 @@ app.set("view engine", "html");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 //
-require("./utility/fill-mysql.js")(app);
+require("./routes/games.js")(app);
 
 var syncOptions = { force: false };
 
@@ -30,8 +30,8 @@ if (process.env.NODE_ENV === "test") {
 console.log(
   "Starting the server, syncing our models ------------------------------------/"
 );
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
@@ -39,7 +39,5 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
-
-
 
 module.exports = app;
