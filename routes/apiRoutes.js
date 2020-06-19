@@ -2,9 +2,9 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  app.get("/api/game_info", function(req, res) {
+    db.Game.findAll({}).then(function(dbGame) {
+      res.json(dbGame);
     });
   });
 
@@ -22,3 +22,4 @@ module.exports = function(app) {
     });
   });
 };
+

@@ -1,7 +1,6 @@
 require("dotenv").config();
 var express = require("express");
 
-
 var db = require("./models");
 
 var app = express();
@@ -12,10 +11,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
+app.set("view engine", "html");
 
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+//
+require("./utility/fill-mysql.js")(app);
 
 var syncOptions = { force: false };
 
@@ -25,7 +27,9 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-console.log('Starting the server, syncing our models ------------------------------------/')
+console.log(
+  "Starting the server, syncing our models ------------------------------------/"
+);
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(
@@ -35,5 +39,7 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
+
+
 
 module.exports = app;
