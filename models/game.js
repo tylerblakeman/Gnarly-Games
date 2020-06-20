@@ -3,9 +3,11 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     artwork: DataTypes.TEXT,
     rating: DataTypes.STRING,
-    description: DataTypes.TEXT
+    genre: DataTypes.STRING,
+    summary: DataTypes.TEXT,
+    storyline: DataTypes.TEXT,
+    website: DataTypes.TEXT
   });
 
   return Game;
 };
-
