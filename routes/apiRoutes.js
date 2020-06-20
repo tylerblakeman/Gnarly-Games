@@ -1,10 +1,11 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all games for cards on main page
   app.get("/api/game_info", function(req, res) {
     db.Game.findAll({}).then(function(dbGame) {
       res.json(dbGame);
+      console.log(dbGame);
     });
   });
 
@@ -21,5 +22,5 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
-};
 
+};
