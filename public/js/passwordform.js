@@ -9,7 +9,7 @@ var passwordRe = $("#passwordReg");
 
 // Adding event listeners to the form to create a new object
 $(document).on("click", "#login", function(){
-var username = $("#emailLogin").val()
+var username = $("#emailLogin").val().trim()
 console.log(username);
 // console.log("hi");
 });
