@@ -6,20 +6,25 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+//app.use(express.static("public"));
 
-app.set("view engine", "html");
+app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-//
-require("./routes/games.js")(app);
 
-var syncOptions = { force: false };
+
+const syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
