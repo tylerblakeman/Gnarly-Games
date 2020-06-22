@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //********need this uncommented out in order to use CSS on handlebars//
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 app.set("view engine", "handlebars");
 

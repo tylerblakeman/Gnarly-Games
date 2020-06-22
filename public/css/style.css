@@ -39,7 +39,7 @@ body {
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap");
 
-.gnarlyGames {
+#gnarlyGames {
   position: absolute;
   top: 25%;
   left: 50%;
