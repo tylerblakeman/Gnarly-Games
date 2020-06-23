@@ -14,11 +14,11 @@ module.exports = function (app) {
     // }
     // res.sendFile(path.join(__dirname, "../public/index.html"))
 
-    var getGames = req.query.gameData;
-    games.getAllGames(function (data) {
-      console.log(data);
-      res.render("index", { game: data });
-    });
+    // var getGames = req.query.gameData;
+    // games.getAllGames(function (data) {
+    //   console.log(data);
+    //   res.render("index", { game: data });
+    // });
 
     // getGames(function (data) {
     //   console.log(data);
