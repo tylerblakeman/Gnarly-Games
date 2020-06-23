@@ -22,8 +22,6 @@ app.use(express.json());
 //********need this uncommented out in order to use CSS on handlebars//
 app.use(express.static("public"));
 
-app.set("view engine", "handlebars");
-
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
