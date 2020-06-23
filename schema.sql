@@ -9,7 +9,6 @@ CREATE TABLE game (
   gameId INTEGER(10) NOT NULL,
   title VARCHAR(50) NOT NULL,
   rating VARCHAR(25),
-  genreId INTEGER(10),
   summary VARCHAR(500),
   storyline VARCHAR(500),
   PRIMARY KEY (gameID)
@@ -22,6 +21,14 @@ CREATE TABLE genres (
   PRIMARY KEY (genreId)
 );
 
+--games_genres - this table will store game id and all of the genres attached to it
+CREATE TABLE game_genres (
+  id INTEGER(10) AUTO_INCREMENT,
+  genreId INT NOT NULL,
+  gameId INT NOT NULL,
+
+)
+
 --User Info Table
 CREATE TABLE user (
   userId INTEGER(10) AUTO_INCREMENT,
@@ -30,7 +37,7 @@ CREATE TABLE user (
   PRIMARY KEY (userId)
 );
 
-
+--user saved games
 CREATE TABLE savedGames (
   userId INTEGER(10) AUTO_INCREMENT,
   gameId INTEGER(10) NOT NULL,
