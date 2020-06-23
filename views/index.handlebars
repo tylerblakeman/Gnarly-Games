@@ -3,14 +3,13 @@
     <img src="/images/Gnarly Games.png" width="100" height="auto" class="d-inline-block align-top" alt="Gnarly Games" />
   </a>
   <div id="gnarlyGames" class="navbar-text">GNARLY GAMES</div>
-  <form class="form-inline my-2 my-lg-0">
-    <button href="#" id="loginBtn" class="btn ml-5" data-target="#myModal{{@index}}">
-      Log In/Register
-    </button>
-  </form>
-</nav>
+
+ <div class="text-center">
+    <a href="" id="loginBtn{{@index}}" class="btn ml-5" data-toggle="modal" data-target="#modalLRForm{{@index}}">LogIn/Register</a>
+  </div>
+  </nav>
 <!--Modal: Login / Register Form-->
-<div class="modal fade" id="#myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog cascading-modal" role="document">
     <!--Content-->
@@ -55,10 +54,6 @@
             </div>
             <!--Footer-->
             <div class="modal-footer">
-              <div class="options text-center text-md-right mt-1">
-                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
-                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
-              </div>
               <button type="button" class="btn btn-outline-info waves-effect ml-auto"
                 data-dismiss="modal">Close</button>
             </div>
@@ -112,10 +107,10 @@
   </div>
 </div>
 <!--Modal: Login / Register Form-->
-
+{{!-- 
 <div class="text-center">
-  <a href="" class="btn ml-5" data-toggle="modal" data-target="##myModal{{@index}}">LogIn/Register</a>
-</div>
+  <a href="" class="btn ml-5" data-toggle="modal" data-target="myModal{{@index}}">LogIn/Register</a>
+{{!-- </div> --}}
 {{!-- end of modal --}}
 
 <!-- Genre/Filters -->
