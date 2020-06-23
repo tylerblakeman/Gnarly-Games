@@ -56,68 +56,7 @@ function getAllGames(cb) {
     });
 }
 
-// getGamesByTitle: function getGamesByTitle (cb) {
-  //search by Game Title
-//   axios({
-//     url: "https://api-v3.igdb.com/games/?search=Zelda&fields=id,name;",
-//     method: "POST",
-//     headers: {
-//       Accept: "application/json",
-//       "user-key": key
-//     }
-    // data:
-    //   "fields id,name;",
-//   })
-//     .then(response => {
-      // console.log(response.data);
-      // console.log(`ID: ${response.data[0].id}`);
-      // console.log(`Game name: ${response.data.name}`);
-      // console.log(`Game summary: ${response.data.summary}`);
-      // // console.log(response.data.popularity);
-      // console.log(`Game popularity: ${response.data.popularity}`);
-//       cb(response.data);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// },
-// getGamesByGenre: function (cb) {
-//   // Genre
-//   axios({
-//     url:
-//       "https://api-v3.igdb.com/genres/?search=The Witcher 3: Wild Hunt&fields checksum,created_at,name,slug,updated_at,url",
-//     method: "POST",
-//     headers: {
-//       Accept: "application/json",
-//       "user-key": key
-//     },
-//     data: "fields checksum,name;"
-//   }).then(response => {
-//     // console.log(response.data);
-//     // console.log(response.data[0].name);
-//     cb(response.data);
-//   });
-// },
-// getGamesById: function (cb) {
-//   // search for game by ID assigned by IGDB
-//   axios({
-//     url: "https://api-v3.igdb.com/games",
-//     method: "POST",
-//     headers: {
-//       Accept: "application/json",
-//       "user-key": key
-//     },
-//     data: "fields *; where id = 1942;"
-//   })
-//     .then(response => {
-//       // console.log(response.data);
-//       // console.log(response.data);
-//       cb(response.data);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// },
+/
 function getGamesbyArt(id) {
   // Art work
   axios({
@@ -138,26 +77,6 @@ function getGamesbyArt(id) {
       console.error(err);
     });
   }
-// },
-// getGamesbyMode: function (cb) {
-//   // Game modes
-//   axios({
-//     url: "https://api-v3.igdb.com/game_modes",
-//     method: "POST",
-//     headers: {
-//       Accept: "application/json",
-//       "user-key": key
-//     },
-//     data: "fields checksum,created_at,name,slug,updated_at,url;"
-//   })
-//     .then(response => {
-//       // console.log(response.data);
-//       // console.log(response.data.name);
-//       cb(response.data);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// }
+
 
 module.exports.getAllGames = getAllGames;
