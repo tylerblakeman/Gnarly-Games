@@ -1,16 +1,18 @@
+// const { INTEGER } = require("sequelize/types");
+
 module.exports = function(sequelize, DataTypes) {
   var Game = sequelize.define("Game", {
     title: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    artwork: {
-      type: DataTypes.STRING,
+    gameID: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     rating: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     summary: {
       type: DataTypes.TEXT,
@@ -19,10 +21,6 @@ module.exports = function(sequelize, DataTypes) {
     storyline: {
       type: DataTypes.TEXT,
       allowNull: true
-    },
-    websiteUrl: {
-      type: DataTypes.TEXT,
-      allowNull: false
     }
   });
 
