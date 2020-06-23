@@ -3,37 +3,51 @@ CREATE DATABASE gnarly_games;
 
 USE gnarly_games;
 -- IGDB 
+
+--Game Table
 CREATE TABLE game (
+  gameId INTEGER(10) NOT NULL,
   title VARCHAR(50) NOT NULL,
-  gameID INTEGER(10) NOT NULL,
   rating VARCHAR(25),
+  genreId INTEGER(10),
   summary VARCHAR(500),
   storyline VARCHAR(500),
   PRIMARY KEY (gameID)
 );
 
-CREATE TABLE game_genre (
-  gameID INT NOT NULL,
-  genreId INT NOT NULL,
-  PRIMARY KEY (gameID)
-);
-
+--Genres Table
 CREATE TABLE genres (
   genreId INT NOT NULL,
   genreName VARCHAR(500),
   PRIMARY KEY (genreId)
 );
 
--- SELECT game.title, game.artworks, game.rating, game.summary, game.storyline, game.website,genre.genreName
--- FROM genre
--- INNER JOIN genres ON genres.genreId=game.genreId;
+--User Info Table
+CREATE TABLE user (
+  userId INTEGER(10) AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  passcode VARCHAR(25) NOT NULL,
+  PRIMARY KEY (userId)
+);
 
--- USE gnarly_games;
 
--- INSERT INTO game (title, artworks, rating, genreId, summary, storyline, website)
--- VALUES (
---   "Super Mario", "img.png", "100", "1", "Supermario is awesome (summary)", "Super Mario Rocks (storyline)", "Here's the game url"
--- );
+CREATE TABLE savedGames (
+  userId INTEGER(10) AUTO_INCREMENT,
+  gameId INTEGER(10) NOT NULL,
+  PRIMARY KEY (userId)
+);
 
--- INSERT INTO genre (genreId, genreName)
--- VALUES ("1", "Adventure");
+--Insert Genre into Game Table
+USE gnarly_games;
+
+SELECT game.title, game.artworks, game.rating, game.summary, game.storyline, game.website,genre.genreName
+FROM genre
+INNER JOIN genres ON genres.genreId=game.genreId;
+
+--Insert Saved Games with User Info
+USE gnarly_games;
+
+SELECT user.username, user.passcode
+FROM savedGames
+INNER JOIN savedGames ON savedGames.userId = =user.userID
+

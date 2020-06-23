@@ -6,21 +6,21 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 let axios = require("axios");
 //creating the key variable using the .env IGDB_KEY=<IGDB_KEY> info
 let key = process.env.IGDB_KEY;
-var db = require("../models");
+let db = require("../models");
 
 function getAllGames(cb) {
-  // First call for 100 Games with name and Summary and critic rating.
+  // First call for 100 Games with the gameID,name, and Summary and critic rating.
   axios({
     url: "https://api-v3.igdb.com/games",
     method: "POST",
     headers: {
       Accept: "application/json",
-      "user-key": key,
+      "user-key": key
     },
     data:
-			"fields id,name,genres,storyline,summary,screenshots,artworks,cover,aggregated_rating; limit 10;",
+      "fields id,name,genres,storyline,summary,screenshots,artworks,cover,aggregated_rating; limit 10;"
   })
-    .then((response) => {
+    .then(response => {
       console.log(response.data);
       // console.log(`ID: ${response.data[0].id}`);
       for (let i = 0; i < response.data.length; i++) {
@@ -32,31 +32,26 @@ function getAllGames(cb) {
         // );
         // console.log(`Game ID: ${response.data[i].id}`)
         // console.log(response.data[i].cover)
-        if (response.data[i].cover){
+        if (response.data[i].cover) {
           getGamesbyArt(response.data[i].cover);
         }
         // getGamesbyArt();
         db.Game.create({
-          title: response.data[i].name,
           gameID: response.data[i].id,
+          title: response.data[i].name,
           rating: response.data[i].aggregated_rating,
+          genreId: response.data[i].genres,
           summary: response.data[i].summary,
           storyline: response.data[i].storyline
-        }).then(function(game) {
-        })
+        });
         // db.Gamegenres
       }
-      // console.log("Pulling all games!", response.data);
-      // cb(response.data);
-      // console.log(response.data.popularity);
-      // console.log(`Game popularity: ${response.data.popularity}`);
     })
-    .catch((err) => {
+    .catch(err => {
       console.error(err);
     });
 }
 
-/
 function getGamesbyArt(id) {
   // Art work
   axios({
@@ -66,17 +61,16 @@ function getGamesbyArt(id) {
       Accept: "application/json",
       "user-key": key
     },
-    data:
-      `fields alpha_channel,animated,checksum,game,height,image_id,url,width;where id=${id};`
-      })
+    data: `fields alpha_channel,animated,checksum,game,height,image_id,url,width;where id=${id};`
+  })
     .then(response => {
-      console.log(`https://images.igdb.com/igdb/image/upload/t_cover_big/${response.data[0].image_id}.jpg`);
-
+      console.log(
+        `https://images.igdb.com/igdb/image/upload/t_cover_big/${response.data[0].image_id}.jpg`
+      );
     })
     .catch(err => {
       console.error(err);
     });
-  }
-
+}
 
 module.exports.getAllGames = getAllGames;
