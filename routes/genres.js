@@ -21,11 +21,10 @@ function getGamesByGenre(cb) {
     .then(response => {
       // console.log(response.data);
       // console.log(response.data[0].name);
-      cb(response.data);
       for (let i = 0; i < response.data.length; i++) {
         db.Genres.create({
-          // genreId: response.data[i].id,
-          // genreName: response.data[i].id,
+          genreId: response.data[i].id,
+          genreName: response.data[i].name
         })
       }
     })
