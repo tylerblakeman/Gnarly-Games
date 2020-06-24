@@ -1,7 +1,7 @@
 // const { INTEGER } = require("sequelize/types");
 
 module.exports = function(sequelize, DataTypes) {
-  var game = sequelize.define("game", {
+  var Game = sequelize.define("Game", {
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -24,6 +24,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return game;
+  return Game;
 };
 
