@@ -30,6 +30,9 @@
           </li>
         </ul>
 
+{{!-- TEST --}}
+{{> games/game-block}}
+
         <!-- Tab panels -->
         <div class="tab-content">
           <!--Panel 1 - this is the login panel-->
@@ -130,15 +133,12 @@
       style="color: #3D144C; border: solid 2px #3D144C; font-weight: 700;">
       Search
     </button>
-    <button type="button" class="filterBtns btn btn-primary ml-3">
-      Game Finder Quiz
-    </button>
   </form>
 </nav>
 <div>
   <ul>
-    {{#each game}}
-    {{ games/game-block }}
+    {{#each games as |game| }}
+    {{> games/game-block title=game.dataValues.title summary=game.dataValues.summary id=game.dataValues.gameID}}
     {{/each}}
   </ul>
 </div>
@@ -154,17 +154,3 @@
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script src="js/games.js"></script>
 <script src="js/passwordform.js"></script>
-<script>
-  $(document).ready(function () {
-    $(".variable-width").slick({
-      infinite: true,
-      speed: 300,
-      centerMode: true,
-      variableWidth: true,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
-    });
-  });
-  
-</script>
