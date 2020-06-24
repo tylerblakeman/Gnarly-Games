@@ -23,9 +23,8 @@ CREATE TABLE genres (
 CREATE TABLE game_genres (
   id INTEGER(10) AUTO_INCREMENT,
   genreId INT NOT NULL,
-  gameId INT NOT NULL,
-
-)
+  gameId INT NOT NULL
+);
 
 
 CREATE TABLE user (
@@ -41,6 +40,7 @@ CREATE TABLE savedGames (
   gameId INTEGER(10) NOT NULL,
   PRIMARY KEY (userId)
 );
+
 
 
 USE gnarly_games;
