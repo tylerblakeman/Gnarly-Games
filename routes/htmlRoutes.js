@@ -12,7 +12,9 @@ module.exports = function (app) {
     //     res.render("index", {data: data});
     //   })
     // }
-    // res.sendFile(path.join(__dirname, "../public/index.html"))
+    // res.sendFile(path.join(__dirname, "../index.handlebars"))
+
+    res.render('index');
 
     // var getGames = req.query.gameData;
     // games.getAllGames(function (data) {
