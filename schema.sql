@@ -23,7 +23,8 @@ CREATE TABLE genres (
 CREATE TABLE game_genres (
   id INTEGER(10) AUTO_INCREMENT,
   genreId INT NOT NULL,
-  gameId INT NOT NULL
+  gameId INT NOT NULL,
+  PRIMARY KEY (id)
 );
 
 
@@ -54,5 +55,5 @@ USE gnarly_games;
 
 SELECT user.username, user.passcode
 FROM savedGames
-INNER JOIN savedGames ON savedGames.userId = =user.userID
+INNER JOIN savedGames ON savedGames.userId = user.userID
 
