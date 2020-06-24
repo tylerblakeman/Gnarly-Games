@@ -68,6 +68,7 @@ function handleUserInputForm(event) {
 
 function hide (){
   if $(document).on("click", "#1", "#2")
+  event.preventDefault();
   $("#mymodal").modal('hide');
 }
 
