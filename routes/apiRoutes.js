@@ -2,8 +2,9 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all games for cards on main page
-  app.get("/api/game_info", function(req, res) {
-    db.Game.findAll({}).then(function(dbGame) {
+  app.get("/api/game", function(req, res) {
+    db.Game.findAll({}).then(function(Game) {
+        res.json(dbPost);
     });
   });
 

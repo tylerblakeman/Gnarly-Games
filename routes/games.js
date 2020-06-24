@@ -19,7 +19,7 @@ function getAllGames() {
 			"user-key": key,
 		},
 		data:
-			`fields id,name,genres,storyline,popularity,summary,screenshots,artworks,cover,aggregated_rating; limit 1; offset ${i*25}; sort popularity desc;`,
+			`fields id,name,genres,storyline,popularity,summary,screenshots,artworks,cover,aggregated_rating; limit 100; offset ${i*100}; sort popularity desc;`,
 	})
 		.then((response) => {
 			// console.log(response.data);
