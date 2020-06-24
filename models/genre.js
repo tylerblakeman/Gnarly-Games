@@ -1,9 +1,9 @@
+//genre ids and their names
 module.exports = function(sequelize, DataTypes) {
-  var Genres = sequelize.define("Genres", {
+  var genres = sequelize.define("genres", {
     genreId: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      primaryKey: true
+      allowNull: true
     },
     genreName: {
       type: DataTypes.STRING,
@@ -11,5 +11,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   
-  return Genres;
+  return genres;
 };

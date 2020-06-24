@@ -12,6 +12,7 @@ var exphbs = require("express-handlebars");
 //get all games function
 var getAllGames = require('./routes/games')
 
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -45,7 +46,7 @@ db.sequelize.sync(syncOptions).then(function () {
       PORT,
       PORT
     );
-    getAllGames.getAllGames()
+    getAllGames.getAllGames();
   });
 });
 

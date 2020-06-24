@@ -9,7 +9,7 @@ CREATE TABLE game (
   rating VARCHAR(25),
   summary VARCHAR(500),
   storyline VARCHAR(500),
-  PRIMARY KEY (gameID)
+  PRIMARY KEY (gameId)
 );
 
 
@@ -20,7 +20,7 @@ CREATE TABLE genres (
 );
 
 
-CREATE TABLE game_genres (
+CREATE TABLE game_genre (
   id INTEGER(10) AUTO_INCREMENT,
   genreId INT NOT NULL,
   gameId INT NOT NULL,
@@ -43,7 +43,13 @@ CREATE TABLE savedGames (
 );
 
 
+CREATE TABLE artwork (
+  gameId INTEGER(10) NOT NULL,
+  imgURL VARCHAR(500) NOT NULL,
+  PRIMARY KEY (gameId)
+);
 
+--Insert Genre into Game Table
 USE gnarly_games;
 
 SELECT game.title, game.artworks, game.rating, game.summary, game.storyline, game.website,genre.genreName

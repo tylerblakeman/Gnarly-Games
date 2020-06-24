@@ -1,14 +1,17 @@
+//game id with genres
 module.exports = function(sequelize, DataTypes) {
-	var Game_Genre = sequelize.define("Game_Genre", {
+	var game_genre = sequelize.define("game_genre", {
 		genreId: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		gameID: {
+		gameId: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
 	});
 
-	return Game_Genre;
+	return game_genre;
 };
+
+
