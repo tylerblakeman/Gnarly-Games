@@ -46,8 +46,9 @@ db.sequelize.sync(syncOptions).then(function () {
       PORT,
       PORT
     );
-    getAllGames.getAllGames();
-  });
+  })
+}).then(function () {
+  getAllGames.getAllGames();
 });
 
 module.exports = app;
