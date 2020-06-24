@@ -3,14 +3,16 @@ $(document).ready(function () {
   var emailInputLi = $("#emailLogin");
   var passInputLi = $("#passwordLogin");
 
-  var emailInputRe = $("#emailReg");
-  var passwordRe = $("#passwordReg");
+  var emailInput = $("#emailReg");
+  var password = $("#passwordReg");
 
-  Adding event listeners to the form to create a new object
+  // Adding event listeners to the form to create a new object
   $(document).on("click", "#loginBtn", function() {
     event.preventDefault()
-    var username = $("#emailLogin").val();
+  });
+  $(document).on("click", "#log-in", function() {
+    var username = $("#login-user").val().trim();
     console.log(username);
     console.log("hi");
-  });
+  })
 });
