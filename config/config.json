@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "a123456b",
+    "password": "password",
     "database": "gnarly_games",
     "host": "localhost",
     "dialect": "mysql"
