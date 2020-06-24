@@ -6,13 +6,30 @@ $(document).ready(function () {
   var emailInput = $("#emailReg");
   var password = $("#passwordReg");
 
-  // Adding event listeners to the form to create a new object
+  // Adding event listeners to the login to prevent defaults
   $(document).on("click", "#loginBtn", function() {
     event.preventDefault()
   });
+
+  //event listener for login button - preventing refresh
   $(document).on("click", "#log-in", function() {
-    var username = $("#login-user").val().trim();
-    console.log(username);
+    event.preventDefault();
+    var username = $(".login-user").val();
+    var password = $(".login-pass").val();
+    alert(username);
+    alert(password)
     console.log("hi");
   })
 });
+
+  //event listener for register button - preventing refresh
+  $(document).on("click", "#register", function() {
+    event.preventDefault();
+    var username = $(".register-user").val();
+    var password = $(".register-pass1").val();
+    var password2 = $(".register-pass2").val();
+    alert(username);
+    alert(password);
+    alert(password2);
+    console.log("hi");
+  })
