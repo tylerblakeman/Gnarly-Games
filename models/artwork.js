@@ -1,10 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
-  var Art = sequelize.define("Art", {
-    imgId: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    }
-  });
-  
-  return Art;
+	var art = sequelize.define("art", {
+		gameId: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		imgURL: {
+			type: DataTypes.TEXT,
+			allowNull: true,
+		},
+	});
+
+	return art;
 };
