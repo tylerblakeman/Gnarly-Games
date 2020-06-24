@@ -5,17 +5,17 @@ var db = require("../models/");
 module.exports = function (app) {
   // Load index page
   // "/", "/?search=title", "/?search=genre"
+  // {include: [db.art]} throw in findAll later
   app.get("/", function (req, res) {
       db.Game.findAll().then(function(games) {
-          // res.render('usuarios/index',{
-          //     users: users
-          // })
+
           console.log(games)
+          res.render('index', {games: games});
       }).catch(function(err) {
           // your error handling code here
+          throw err;
       });
       
-      res.render('index');
       
       // var getGames = req.query.gameData;
     // games.getAllGames(function (data) {
