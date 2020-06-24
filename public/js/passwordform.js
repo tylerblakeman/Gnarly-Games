@@ -68,6 +68,7 @@ function handleUserInputForm(event) {
 
 function hide (){
   if $(document).on("click", "#1", "#2")
+  event.preventDefault();
   $("#mymodal").modal('hide');
 }
 
@@ -98,14 +99,14 @@ function hide (){
 
 });
 
-  //event listener for register button - preventing refresh
-  $(document).on("click", "#register", function() {
-    event.preventDefault();
-    var username = $(".register-user").val();
-    var password = $(".register-pass1").val();
-    var password2 = $(".register-pass2").val();
-    alert(username);
-    alert(password);
-    alert(password2);
-    console.log("hi");
-  })
+  // //event listener for register button - preventing refresh
+  // $(document).on("click", "#register", function() {
+  //   event.preventDefault();
+  //   var username = $(".register-user").val();
+  //   var password = $(".register-pass1").val();
+  //   var password2 = $(".register-pass2").val();
+  //   alert(username);
+  //   alert(password);
+  //   alert(password2);
+  //   console.log("hi");
+  // })

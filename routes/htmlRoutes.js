@@ -1,31 +1,33 @@
 var path = require("path");
-var games = require("./games.js");
+var db = require("../models/");
+
 
 module.exports = function (app) {
   // Load index page
   // "/", "/?search=title", "/?search=genre"
   app.get("/", function (req, res) {
-    console.log(`User hit route: ${req.params}`)
-    // var getWhat = req.query.search;
-    // if (search === 'title') {
-    //   games.getGamesByTitle(function(data) {
-    //     res.render("index", {data: data});
-    //   })
-    // }
-    // res.sendFile(path.join(__dirname, "../index.handlebars"))
-
-    res.render('index');
-
-    // var getGames = req.query.gameData;
+      db.Game.findAll().then(function(games) {
+          // res.render('usuarios/index',{
+          //     users: users
+          // })
+          console.log(games)
+      }).catch(function(err) {
+          // your error handling code here
+      });
+      
+      res.render('index');
+      
+      // var getGames = req.query.gameData;
     // games.getAllGames(function (data) {
     //   console.log(data);
     //   res.render("index", { game: data });
     // });
-
+    
     // getGames(function (data) {
-    //   console.log(data);
-    // });
-  });
+      //   console.log(data);
+      // });
+    });
+
 
   app.get("/saved", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/saved.html"));
