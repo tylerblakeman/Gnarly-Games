@@ -48,7 +48,7 @@ db.sequelize.sync(syncOptions).then(function () {
     );
   })
 }).then(function () {
-
+  getAllGames.getAllGames();
 });
 
 module.exports = app;
