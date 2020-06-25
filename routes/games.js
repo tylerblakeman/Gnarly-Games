@@ -36,7 +36,7 @@ function getAllGames() {
 				}
 
 				db.Game.create({
-					gameID: response.data[i].id,
+					gameId: response.data[i].id,
 					title: response.data[i].name,
 					rating: response.data[i].aggregated_rating,
 					summary: response.data[i].summary,
