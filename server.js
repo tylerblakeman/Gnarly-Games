@@ -48,7 +48,7 @@ db.sequelize.sync(syncOptions).then(function () {
     );
   })
 }).then(function () {
-  getAllGames.getAllGames();
+  console.log('it looks like everything is ready - go to heroku and use console to run games.js under the routes folder')
 });
 
 module.exports = app;

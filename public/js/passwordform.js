@@ -97,7 +97,7 @@ function handleUserInputForm(event) {
   //   console.log(passLogin);
   // });
 
-});
+// });
 
   // //event listener for register button - preventing refresh
   // $(document).on("click", "#register", function() {
