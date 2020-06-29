@@ -135,12 +135,12 @@
     </button>
   </form>
 </nav>
-<div>
-  <ul>
-    {{#each games as |game| }}
-    {{> games/game-block title=game.dataValues.title summary=game.dataValues.summary id=game.dataValues.gameID}}
-    {{/each}}
-  </ul>
+<div class="container">
+  <div class="row">
+      {{#each games as |game| }}
+      {{> games/game-block title=game.dataValues.title summary=game.dataValues.summary gameId=game.dataValues.gameId}}
+      {{/each}}
+    </div>
 </div>
 
 

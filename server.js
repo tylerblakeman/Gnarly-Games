@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 3000;
 var exphbs = require("express-handlebars");
 
 //get all games function
-var getAllGames = require('./routes/games')
+// var getAllGames = require('./routes/games')
 
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -48,7 +48,7 @@ db.sequelize.sync(syncOptions).then(function () {
     );
   })
 }).then(function () {
-  getAllGames.getAllGames();
+  // getAllGames.getAllGames();
 });
 
 module.exports = app;
